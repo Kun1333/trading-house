@@ -1,3 +1,2 @@
 # trading-house
-First test
-Second test
+git, gitlab (ssh key, public key deployment), node (js mootor install), npm
