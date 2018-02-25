@@ -12,3 +12,6 @@ cd (vaata UNIX commands)
 
 https://github.com/facebook/create-react-app
 
+intelliJ IDEA
+
+npm, node, git (check youtube)
