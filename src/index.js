@@ -9,9 +9,11 @@ import Immutable from 'immutable';
 import registerServiceWorker from './registerServiceWorker';
 
 import { View, View2, View3 } from './components'
+import { viewReducer, configReducer } from './reducers'
 
 const reducer = combineReducers({
-
+ config: configReducer,
+ view: viewReducer
 });
 
 let initialState = { config: Immutable.Map(window.config) };
