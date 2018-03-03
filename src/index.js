@@ -8,11 +8,14 @@ import {Provider} from 'react-redux';
 import Immutable from 'immutable';
 import registerServiceWorker from './registerServiceWorker';
 
+import { View, View2 } from './components'
+
 const reducer = combineReducers({
 
 });
 
 let initialState = { config: Immutable.Map(window.config) };
+let contextPath = initialState.contextPath ? initialState.contextPath : '/';
 
 console.log(window.config);
 console.log('context path: ' + contextPath);
@@ -25,6 +28,7 @@ ReactDOM.render(
       <HashRouter>
         <div>
           <Route path='/' render={() => <View /> } />
+          <Route path='/x' render={() => <View2 /> } />
         </div>
       </HashRouter>
     </Provider>,
