@@ -8,7 +8,7 @@ import {Provider} from 'react-redux';
 import Immutable from 'immutable';
 import registerServiceWorker from './registerServiceWorker';
 
-import { View, View2 } from './components'
+import { View, View2, View3 } from './components'
 
 const reducer = combineReducers({
 
@@ -29,6 +29,7 @@ ReactDOM.render(
         <div>
           <Route path='/' render={() => <View /> } />
           <Route path='/x' render={() => <View2 /> } />
+          <Route path='/y' render={() => <View3 value='BLAAH' value2='BOOH'/> } />
         </div>
       </HashRouter>
     </Provider>,
