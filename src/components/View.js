@@ -2,7 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { Button, Popup } from 'semantic-ui-react'
 
-// import { getEvent } from './actions';
+import { changeViewValue } from './../actions';
 
 
 class ViewInternal extends React.Component {
@@ -13,7 +13,8 @@ class ViewInternal extends React.Component {
     return (<div>
       <Popup
         trigger={<Button color='red' icon='flask' content='Activate doomsday device' />}
-        content={<Button color='green' content='Confirm the launch' />}
+        content={<Button color='green' content='Confirm the launch'
+          onClick={() => this.props.changeViewValue('booooo')}/>}
         on='click'
         position='top right'
       />
@@ -29,7 +30,7 @@ export const View = connect(
 },
  (dispatch, props) => {
    return {
-     // getEvent: (url) => dispatch(getEvent(url))
+     changeViewValue: (value) => dispatch(changeViewValue(value))
    };
  }
 ) (ViewInternal);
