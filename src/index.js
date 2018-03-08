@@ -32,6 +32,7 @@ ReactDOM.render(
           <Route path='/' render={() => <View /> } />
           <Route path='/x' render={() => <View2 /> } />
           <Route path='/y' render={() => <View3 value='BLAAH' value2='BOOH'/> } />
+          <Route path='/z' render={() => <View4 /> } />
         </div>
       </HashRouter>
     </Provider>,
