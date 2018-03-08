@@ -1,35 +1,26 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
-import { } from 'semantic-ui-react'
-
-import { View2 } from './View2'
+import { Segment, Dimmer, Loader } from 'semantic-ui-react'
 
 // import { getEvent } from './actions';
 
 
-class View3Internal extends React.Component {
+class View4Internal extends React.Component {
   componentWillMount() {
-    // console.log('');
-  }
-
-  static get propTypes() {
-    return {
-      value: PropTypes.string.isRequired,
-      value2: PropTypes.string.isRequired,
-    }
   }
 
   render() {
-    return <div>
-      <View2 />
-      <div>{this.props.value}</div>
-      <div>{this.props.value2}</div>
-    </div>
+    return (
+      <Segment>
+        <Dimmer active>
+          <Loader />
+        </Dimmer>
+      </Segment>
+    );
   }
 }
 
-export const View3 = connect(
+export const View4 = connect(
  state => {
    return {
      config: state.config,
@@ -40,4 +31,4 @@ export const View3 = connect(
      // getEvent: (url) => dispatch(getEvent(url))
    };
  }
-) (View3Internal);
+) (View4Internal);
