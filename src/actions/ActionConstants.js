@@ -1,1 +1,0 @@
-export const CHANGE_VIEW_VALUE = 'CHANGE_VIEW_VALUE';
