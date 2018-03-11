@@ -9,11 +9,11 @@ import Immutable from 'immutable';
 import registerServiceWorker from './registerServiceWorker';
 
 import { TradingTable } from './components'
-import { viewReducer, configReducer } from './reducers'
+import { createItemReducer, configReducer } from './reducers'
 
 const reducer = combineReducers({
  config: configReducer,
- view: viewReducer
+ createItem: createItemReducer
 });
 
 let initialState = { config: Immutable.Map(window.config) };

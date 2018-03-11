@@ -1,2 +1,2 @@
-export { viewReducer } from './viewReducer'
+export { createItemReducer } from './createItemReducer'
 export { configReducer } from './configReducer'

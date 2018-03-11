@@ -6,11 +6,12 @@ const INITIAL_STATE = Immutable.Map();
 
 
 
-export function viewReducer(state = INITIAL_STATE, action) {
+export function createItemReducer(state = INITIAL_STATE, action) {
   switch (action.type) {
-    case ActionConstants.CHANGE_VIEW_VALUE:
-      console.log('view reducer', action);
-      return state;
+    case ActionConstants.CREATE_ITEM_ACTIVE:
+      return state
+        .set('active', action.value)
+        .delete('value');
     default: return state;
   }
   // console.log('view reducer', action);

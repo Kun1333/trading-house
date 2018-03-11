@@ -1,9 +1,10 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { Table } from 'semantic-ui-react'
+import { Table, Icon, Button, Container, Header } from 'semantic-ui-react'
 
-import {  } from './../actions';
+
 import { TradingItem } from './TradingItem';
+import { CreateTradingItem } from './CreateTradingItem';
 
 
 class TradingTableInternal extends React.Component {
@@ -24,11 +25,20 @@ class TradingTableInternal extends React.Component {
       .map(header => this.createHeader(1, 1, header));
     let items = this.props.items
       .map(item => <TradingItem key={item.id} value={item}/>)
-    return (
+
+    return (<Container text><br/>
+      <Header as='h3'>Inventory List</Header>
       <Table celled structured>
         <Table.Header><Table.Row>{headers}</Table.Row></Table.Header>
         <Table.Body>{items}</Table.Body>
-      </Table>);
+        <Table.Footer fullWidth>
+          <Table.Row>
+            <Table.HeaderCell colSpan='4'>
+              <CreateTradingItem/>
+            </Table.HeaderCell>
+          </Table.Row>
+        </Table.Footer>
+      </Table></Container>);
   }
 }
 
@@ -40,7 +50,7 @@ export const TradingTable = connect(
 },
  (dispatch, props) => {
    return {
-     // changeViewValue: (value) => dispatch(changeViewValue(value))
+     // setCreateItemActive: () => dispatch(setCreateItemActive(true))
    };
  }
 ) (TradingTableInternal);
