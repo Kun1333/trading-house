@@ -10,19 +10,19 @@ import registerServiceWorker from './registerServiceWorker';
 
 import { TradingTable } from './components'
 import { createItemReducer, configReducer } from './reducers'
+import { middleware } from './middleware'
 
 const reducer = combineReducers({
  config: configReducer,
  createItem: createItemReducer
 });
 
-let initialState = { config: Immutable.Map(window.config) };
+let initialState = { config: Immutable.fromJS(window.config) };
 let contextPath = initialState.contextPath ? initialState.contextPath : '/';
 
 console.log(window.config);
 console.log('context path: ' + contextPath);
 
-const middleware = [];
 const store = createStore(reducer, initialState, applyMiddleware(...middleware));
 
 ReactDOM.render(

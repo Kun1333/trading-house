@@ -11,7 +11,11 @@ export function createItemReducer(state = INITIAL_STATE, action) {
     case ActionConstants.CREATE_ITEM_ACTIVE:
       return state
         .set('active', action.value)
-        .delete('value');
+        .set('value', state.get('value') ? state.get('value') : Immutable.fromJS({}))
+        ;
+    case ActionConstants.CREATE_ITEM_CHANGE_VALUE:
+      return state
+        .setIn(['value', action.id], action.value);
     default: return state;
   }
   // console.log('view reducer', action);
